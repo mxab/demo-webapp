@@ -50,10 +50,12 @@ tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootBuildImage>{
 	isPublish = true
 	docker {
 		publishRegistry {
+			val publishToken: String by project
 //			username = "user"
 //			password = "secret"
 			//url = "https://docker.example.com/v1/"
 			//email = "user@example.com"
+			token = publishToken
 		}
 	}
 

@@ -48,5 +48,13 @@ tasks.withType<Test> {
 tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootBuildImage>{
 	imageName = "ghcr.io/mxab/demo-webapp:${project.version}"
 	isPublish = true
+	docker {
+		publishRegistry {
+//			username = "user"
+//			password = "secret"
+			//url = "https://docker.example.com/v1/"
+			//email = "user@example.com"
+		}
+	}
 
 }

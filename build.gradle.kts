@@ -48,5 +48,8 @@ tasks.withType<Test> {
 tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootBuildImage>{
 	imageName = "ghcr.io/mxab/demo-webapp:${project.version}"
 	isPublish = false
-
+	environment = mapOf(
+		"BPE_DELIM_JAVA_TOOL_OPTIONS" to " ",
+		"BPE_APPEND_JAVA_TOOL_OPTIONS" to "-Xmx128m -Xms64m"
+	)
 }
